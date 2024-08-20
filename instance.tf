@@ -12,7 +12,7 @@ resource "aws_instance" "docker" {
     sudo yum install docker -y
     sudo newgrp docker
     sudo -a -G docker ec2-user
-    sudo enable --now docker
+    sudo systemctl enable --now docker
     EOF
     tags = {
         Name = "docker"
